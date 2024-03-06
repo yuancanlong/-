@@ -1,0 +1,334 @@
+// @import '~antd/es/style/themes/default.less';
+// @import '~antd/dist/antd.variable.min.css';
+// @import  '~antd/es/style/themes/index';
+@import (reference) '~antd/es/style/themes/index';
+
+// @primary: var(--custom, #ff6a00);
+// @primary5: var(--custom-5, #ff6a000d);
+// @primary15: var(--custom-15, #ff6a0026);
+// @primary75: var(--custom-75, #ff6a00BF);
+
+// 定义变量
+@theme-black: #1b1b1e;
+@theme-green: var(--custom-75, #0e7bfe);
+@theme-color: var(--custom-75, #0e7bfe);
+@theme-bgColor: #f4f4f7;
+@theme-border: #e5e5e5;
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+ul li {
+
+  list-style: none;
+
+}
+
+.colorWeak {
+  filter: invert(80%);
+}
+
+.ant-layout {
+  min-height: 100vh;
+  background: #f4f4f7 !important;
+}
+
+.ant-layout-header {
+  box-shadow: none;
+}
+
+canvas {
+  display: block;
+}
+
+.main_background {
+  background: #f4f4f7;
+  height: 100%;
+}
+
+.ant-pro-top-nav-header {
+  box-shadow: none !important;
+}
+
+.ant-select-single:not(.ant-select-customize-input) .ant-select-selector {
+  //修改所有select组件的圆角
+  border-radius: 4px !important;
+  // border: 1px solid #ebebeb !important;
+  color: #1b1b1e !important;
+  font-weight: normal;
+}
+
+.ant-input {
+  //修改所有input组件的圆角
+  border-radius: 4px !important;
+  // border: 1px solid #ebebeb !important;
+  color: #1b1b1e !important;
+}
+
+.ant-input-number-input {
+  border-radius: 4px !important;
+  // border: 1px solid #ebebeb !important;
+  color: #1b1b1e !important;
+}
+
+.ant-modal-mask {
+  background-color: rgba(0, 0, 0, 0.65) !important;
+}
+
+.ant-picker {
+  border-radius: 4px;
+}
+
+.ant-btn-default {
+  color: @theme-color;
+  border: 1px solid @theme-color;
+}
+
+.ant-btn-default:hover {
+  background-color: @theme-color;
+  color: #fff;
+}
+
+.ant-btn-primary {
+  color: #fff;
+  background-color: @theme-color;
+  text-shadow: none;
+  box-shadow: none;
+}
+
+.ant-btn-primary:hover {
+  box-shadow: 0 4px 16px rgba(14, 123, 254,0.30);
+  background-color: @theme-color;
+}
+
+.ant-btn-text:hover {
+  background: rgba(0, 0, 0, 0);
+}
+
+.edit_action_btn {
+  // width: 88px;
+  border-radius: 20px;
+  height: 40px;
+  font-size: 16px;
+  font-weight: bolder;
+}
+
+.new_event {
+  .ant-modal-header {
+    border-bottom: none;
+  }
+}
+
+.ant-picker {
+  // 修改时间组件圆角
+  border-radius: 4px !important;
+}
+
+// 文字超出一行点点点
+.textOverflow {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}
+
+body {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+@media (max-width: @screen-xs) {
+  .ant-table {
+    width: 100%;
+    overflow-x: auto;
+
+    &-thead>tr,
+    &-tbody>tr {
+
+      >th,
+      >td {
+        white-space: pre;
+
+        >span {
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+// 兼容IE11
+@media screen and(-ms-high-contrast: active),
+(-ms-high-contrast: none) {
+  body .ant-design-pro>.ant-layout {
+    min-height: 100vh;
+  }
+}
+
+.ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected {
+  background-color: #fff !important;
+
+  &:after {
+    display: none;
+  }
+}
+
+.ant-pro-sider-menu-sider.fix-sider-bar .ant-menu-inline .ant-menu-submenu-title {
+  font-size: 16px !important;
+}
+
+.ant-pro-top-nav-header-menu {
+  display: flex;
+  justify-content: center;
+}
+
+// 阴影效果
+.shadow {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
+}
+
+.emptyButtonTheme {
+  height: 32px;
+  font-size: 14px;
+  // font-weight: bold;
+  border-radius: 19px;
+  border: 1px solid @theme-color;
+  color: @theme-color;
+  background-color: #fff;
+  // min-width: 110px;
+
+  &:hover {
+    color: #fff;
+    background-color: @theme-color;
+  }
+}
+
+.ant-tabs-tab-btn {
+  color: #1b1b1e;
+}
+
+.fillButtonTheme {
+  background-color: @theme-color;
+  color: #fff;
+  height: 38px;
+  font-size: 16px;
+  font-weight: bold;
+  min-width: 110px;
+  border-radius: 19px;
+  box-shadow: none;
+  border: none;
+
+  &:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+    background-color: @theme-color;
+    color: #fff;
+  }
+
+  &:focus {
+    background-color: @theme-color;
+    color: white;
+  }
+}
+
+.mainTitle {
+  font-size: 16px;
+  color: @theme-black;
+  font-weight: bold;
+}
+
+.subTitle {
+  color: #999;
+  font-size: 14px;
+}
+
+.tool_btn_color {
+  padding-left: 0;
+}
+
+.tool_btn_color:hover {
+  color: @theme-color;
+}
+
+.tool_save_btn_group {
+  display: flex;
+  align-items: center;
+  // position: fixed;
+  // bottom: 36px;
+  width: 650px;
+  height: 56px;
+  background-color: #fff;
+  padding-top: 20px;
+  z-index: 2;
+
+  :global(.ant-form-item) {
+    margin-bottom: 0;
+  }
+
+  .save_btn {
+    height: 36px;
+    margin-right: 20px;
+    font-size: 16px;
+    border-radius: 20px;
+    padding: 0 24px;
+  }
+
+  .cancle_btn {
+    height: 36px;
+    margin-right: 20px;
+    font-size: 16px;
+    border-radius: 20px;
+    padding: 0 24px;
+  }
+}
+
+.tool_statistics {
+  font-size: 14px;
+  color: #999;
+}
+
+.ant-btn-text:hover,
+.ant-btn-text:focus {
+  background-color: transparent;
+}
+
+.ant-dropdown {
+  z-index: 99;
+}
+
+.ant-popover-inner {
+  border-radius: 8px !important;
+}
+
+// .ant-table-thead {
+//   >tr {
+//     .ant-table-cell {
+//       padding: 16px 8px !important;
+//     }
+//   }
+// }
+
+.form_label::before {
+  display: inline-block;
+  margin-right: 4px;
+  color: #ff4d4f;
+  font-size: 14px;
+  font-family: SimSun, sans-serif;
+  line-height: 1;
+  content: '*';
+}
+
+.ant-btn-text {
+  &:hover {
+    color: @theme-color;
+  }
+}

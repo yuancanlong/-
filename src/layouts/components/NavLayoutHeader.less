@@ -1,0 +1,53 @@
+@import '~@/global.less';
+
+.home_icon {
+  padding: 10px;
+  color: @theme-green;
+  font-size: 14px;
+  background-color: #fff;
+  border: 1px solid #fff;
+  border-radius: 6px;
+  &:hover {
+    background-color: @theme-green;
+    color: white;
+    border: 1px solid @theme-green;
+  }
+}
+
+.back {
+  color: #999;
+  cursor: pointer;
+  .back_icon {
+    margin-right: 8px;
+    margin-left: 4px;
+    font-size: 14px;
+  }
+  &:hover {
+    color: @theme-black;
+  }
+}
+
+.divider {
+  display: inline-block;
+  width: 1px;
+  height: 25px;
+  margin: 0 20px;
+  background-color: #e5e5e5;
+}
+
+.back_text, .divider, .title {
+  font-size: 16px;
+  vertical-align: middle;
+}
+
+.nav_layout_header {
+  padding-bottom: 10px;
+  :global(.ant-page-header-heading-extra) {
+    display: flex;
+    align-items: center;
+  }
+}
+:global(.ant-page-header-back){
+  margin-right: 0;
+}
+

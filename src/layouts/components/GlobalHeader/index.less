@@ -1,0 +1,328 @@
+//@import '../../../../node_modules/antd/es/style/themes/default.less';
+@import '~@/global.less';
+
+@pro-header-hover-bg: rgba(0, 0, 0, 0.025);
+
+:global(.ant-dropdown-menu-sub) {
+  border-radius: 10px;
+}
+
+.menu {
+  max-height: 90vh;
+  overflow: scroll;
+  border-radius: 10px;
+
+  :global {
+    .anticon {
+      width: 20px;
+      font-size: 14px !important;
+    }
+
+    .ant-dropdown-menu-item {
+      min-width: 260px;
+      min-height: 40px;
+      line-height: 40px;
+    }
+
+    .ant-dropdown-menu-submenu-title {
+      display: flex;
+      align-items: center;
+    }
+
+    .ant-dropdown-menu-submenu {
+      min-height: 40px;
+      line-height: 40px;
+
+      .ant-dropdown-menu-submenu-title {
+        min-width: 260px;
+        min-height: 40px;
+        padding: 5px 12px;
+        line-height: 40px;
+      }
+    }
+  }
+}
+
+.menuWrap {
+  max-height: 70vh;
+  overflow: auto;
+  &::-webkit-scrollbar {
+    width: 0;
+  }
+}
+
+.right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+  // float: right;
+  height: @layout-header-height;
+  margin-left: auto;
+  overflow: hidden;
+  border-left: 1px solid @theme-bgColor;
+
+  .team {
+    display: flex;
+    align-items: center;
+    margin-left: 24px;
+    color: @theme-black;
+    font-size: 18px;
+  }
+
+  .action {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 0 12px;
+    cursor: pointer;
+    transition: all 0.3s;
+
+    > span {
+      color: @text-color;
+      vertical-align: middle;
+    }
+
+    &:hover {
+      background: @pro-header-hover-bg;
+    }
+
+    &:global(.opened) {
+      background: @pro-header-hover-bg;
+    }
+  }
+
+  .search {
+    padding: 0 12px;
+
+    &:hover {
+      background: transparent;
+    }
+  }
+
+  .account {
+    .avatar {
+      margin: ~'calc((@{layout-header-height} - 24px) / 2)' 0;
+      margin-right: 8px;
+      color: @primary-color;
+      vertical-align: top;
+      background: rgba(255, 255, 255, 0.85);
+    }
+  }
+}
+
+.dark {
+  .action {
+    color: rgba(255, 255, 255, 0.85);
+
+    > span {
+      color: rgba(255, 255, 255, 0.85);
+    }
+
+    &:hover,
+    &:global(.opened) {
+      background: @primary-color;
+    }
+  }
+}
+
+:global(.ant-pro-global-header) {
+  .dark {
+    .action {
+      color: @text-color;
+
+      > span {
+        color: @text-color;
+      }
+
+      &:hover {
+        color: rgba(255, 255, 255, 0.85);
+
+        > span {
+          color: rgba(255, 255, 255, 0.85);
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: @screen-md) {
+  :global(.ant-divider-vertical) {
+    vertical-align: unset;
+  }
+
+  .name {
+    display: none;
+  }
+
+  .right {
+    position: absolute;
+    top: 0;
+    right: 12px;
+
+    .account {
+      .avatar {
+        margin-right: 0;
+      }
+    }
+
+    .search {
+      display: none;
+    }
+  }
+}
+
+.teamUserInfoWrap {
+  display: flex;
+  padding: 10px;
+
+  .headImg {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+  }
+
+  .teamUserInfo {
+    flex: 1;
+    align-items: center;
+    margin-left: 10px;
+
+    .teamUserName {
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    .teamUserRoleName {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      width: 200px;
+    }
+
+    .eachRoleName {
+      margin-bottom: 5px;
+      background-color: #c7e9fa;
+      border-color: #6abef9;
+    }
+  }
+}
+
+.teamInfoWrap {
+  display: flex;
+  align-items: center;
+  min-width: 180px;
+  min-height: 40px;
+
+  .teamListUserHeadImg {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+  }
+
+  .teamName {
+    flex: 1;
+    margin: 0 10px;
+  }
+
+  .currentIcon {
+    width: 30px;
+    color: @theme-color;
+  }
+}
+
+.createTeam {
+  min-height: 40px;
+  color: @theme-color;
+  line-height: 40px;
+  text-align: center;
+}
+
+.store_entrance {
+  height: 30px;
+  padding: 4px 6px;
+  color: #fff;
+  font-size: 14px;
+  background-color: #1875f0;
+  border-radius: 24px;
+  cursor: pointer;
+
+  .store_entrance_count {
+    margin-left: 22px;
+    padding: 0 6px;
+    color: yellow;
+    line-height: 22px;
+    text-align: center;
+    background-color: #0c67e0;
+    border-radius: 20px;
+  }
+}
+
+.store_list {
+  height: 34px;
+  padding: 2px;
+  background-color: #fff;
+  border-radius: 100px;
+  box-shadow: 0px 3px 4px 0px rgba(214, 214, 214, 0.5);
+}
+
+.store_list:hover {
+  .store_entrance {
+    box-shadow: 0px 8px 16px 0px rgba(214, 214, 214, 0.5);
+  }
+}
+
+.storeBtn {
+  color: @theme-green;
+  border-color: @theme-green;
+}
+
+.team_message {
+  color: rgba(0, 0, 0, 0.25);
+  font-size: 12px;
+  line-height: 14px;
+}
+
+.checkout_team {
+  line-height: 20px;
+}
+
+.shop_list {
+  min-height: 100px;
+  max-height: 500px;
+  overflow-y: scroll;
+  scrollbar-width: none;
+  /* firefox */
+  -ms-overflow-style: none;
+  /* IE 10+ */
+}
+
+.shop_list::-webkit-scrollbar {
+  display: none;
+  /* Chrome Safari */
+}
+
+.question {
+  // display: flex;
+  margin-right: 20px;
+
+  .desc {
+    width: 56px;
+    margin: 0 16px;
+    color: #666;
+    font-size: 14px;
+    cursor: pointer;
+
+    &:hover {
+      color: @theme-color;
+    }
+  }
+}
+
+.shop_name {
+  max-width: 82px;
+  margin: 0 12px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  word-break: break-all;
+}

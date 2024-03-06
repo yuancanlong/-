@@ -1,0 +1,53 @@
+.fuzzy {
+  :global {
+    .ant-layout {
+      -webkit-filter: blur(5px);
+      /* Chrome, Opera */
+      -moz-filter: blur(5px);
+      -ms-filter: blur(5px);
+      filter: blur(5px);
+    }
+  }
+
+}
+
+.layout {
+  >:global(.ant-layout) {
+    flex-direction: row;
+  }
+  :global(.ant-layout-header) {
+    height: 64px !important;
+  }
+  :global(.ant-pro-global-header) {
+    padding-left: 0;
+    box-shadow: none;
+    border-bottom: 1px solid #f0f0f0;
+  }
+}
+
+//:global(.ant-menu-item) {
+//  border-bottom: none !important;
+//
+//  &:hover {
+//    border-bottom: none;
+//  }
+//}
+//
+//:global(.ant-pro-global-header-trigger) {
+//  display: none;
+//}
+//
+//:global {
+//  .ant-pro-global-header {
+//    box-shadow: none;
+//    border-bottom: 1px solid #f4f4f7;
+//  }
+//
+//  .ant-pro-basicLayout .ant-layout-header.ant-pro-fixed-header {
+//    z-index: 99 !important;
+//  }
+//}
+//
+//.edui_fixedlayer{
+//  display: none;
+//}

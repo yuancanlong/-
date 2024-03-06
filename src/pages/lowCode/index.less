@@ -1,0 +1,72 @@
+.content_layout {
+  min-height: calc(100vh - 191px);
+  border: 1px solid;
+  :global(.ant-layout-header) {
+    background: #f4f4f4;
+    border-bottom: 1px solid #000;
+  }
+  :global(.ant-layout) {
+    min-height: calc(100vh - 256px);
+  }
+  :global(.ant-layout > .ant-layout-sider) {
+    background: #f4f4f4;
+  }
+  :global(.ant-layout > .ant-layout-content) {
+    border-right: 1px solid;
+    border-left: 1px solid;
+  }
+}
+.componentList {
+  position: relative;
+  display: grid;
+  grid-gap: 10px 19px;
+  grid-template-rows: repeat(auto-fill, 40px);
+  grid-template-columns: repeat(auto-fill, 80px);
+  height: 65%;
+  padding: 8px;
+  opacity: 1;
+  transition: opacity 0.5s 0.5s;
+
+  div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 40px;
+    padding: 2px 5px;
+    text-align: center;
+    border: 1px solid #ddd;
+    cursor: grab;
+
+    &:active {
+      cursor: grabbing;
+    }
+
+    .iconfont {
+      margin-right: 4px;
+      font-size: 20px;
+    }
+
+    .icon-wenben,
+    .icon-biaoge {
+      font-size: 18px;
+    }
+
+    .icon-tupian {
+      font-size: 16px;
+    }
+  }
+}
+.editor {
+  position: relative;
+  height: 100%;
+  margin: auto;
+  background: #fff;
+  .lock {
+    opacity: 0.5;
+
+    &:hover {
+      cursor: not-allowed;
+    }
+  }
+}

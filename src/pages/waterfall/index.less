@@ -1,0 +1,135 @@
+.fall {
+    border: 1px solid red;
+    column-count: 2;
+    /* 这里设置你想要的列数 */
+    column-gap: 10px;
+    /* 这里设置列与列之间的距离 */
+    column-width: 150px;
+}
+
+.fall>div {
+    margin-bottom: 10px;
+    /* 这里设置每个项目之间的间距 */
+    break-inside: avoid;
+    /* 避免在元素内部分隔内容 */
+    border: 1px solid;
+}
+
+.fall>img {
+    margin-bottom: 10px;
+    /* 这里设置每个项目之间的间距 */
+    break-inside: avoid;
+    /* 避免在元素内部分隔内容 */
+    border: 1px solid blue;
+}
+
+.content {
+    height: 400px;
+    overflow: scroll;
+
+}
+
+.item {
+    position: relative;
+}
+
+.item>p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.mp {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+.panel {
+    border: 1px solid;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.triangle {
+    width: 10px;
+    height: 10px;
+    background-repeat: no-repeat;
+    background-image: linear-gradient(32deg, orangered 50%, rgba(255, 255, 255, 0) 50%), linear-gradient(148deg, orangered 50%, rgba(255, 255, 255, 0) 50%);
+    background-size: 100% 50%;
+    background-position: top left, bottom left;
+    // background-color: skyblue;
+    // clip-path: polygon(0 0, 0% 100%, 100% 50%);
+}
+
+.panelContent {
+    width: 100%;
+    border: 1px solid red;
+    max-height: 0;
+    /* 初始高度为0 */
+    overflow: hidden;
+    /* 隐藏超出内容高度的内容 */
+    transition: max-height 0.5s ease;
+    /* 添加动画效果 */
+}
+
+.active {
+    max-height: 1000px;
+    /* 展开后的最大高度 */
+}
+
+.noActive {
+    max-height: 0;
+}
+
+.tooltipWrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltipContent {
+    display: inline-block;
+}
+
+.tooltipTip {
+    visibility: hidden;
+    position: absolute;
+    top: calc(100% + 4px);
+    /* 定位到主要内容元素的下方 */
+    left: 50%;
+    /* 水平居中 */
+    transform: translateX(-50%);
+    /* 通过偏移自身的50%实现水平居中 */
+    background-color: #333;
+    color: #fff;
+    padding: 5px;
+    border-radius: 4px;
+    white-space: nowrap;
+    z-index: 1;
+}
+
+.tooltipTip::after {
+    content: "";
+    position: absolute;
+    top: -5px;
+    /* 定位到上方 */
+    left: 50%;
+    // left: 4px;
+    /* 水平居中 */
+    transform: translateX(-50%);
+    /* 通过偏移自身的50%实现水平居中 */
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 5px solid #333;
+    /* 与 Tooltip 背景色相同 */
+}
+
+.tooltipWrapper:hover .tooltipTip {
+    visibility: visible;
+}
